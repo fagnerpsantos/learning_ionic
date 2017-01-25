@@ -1,13 +1,17 @@
 angular.module('app.controllers', [])
 
-.controller('LoginCtrl', function($scope, $ionicListDelegate, $window){
+.controller('LoginCtrl', function($scope, $window, webservice){
+  if(!webservice.getToken()){
+  	$window.location.href = '#/app/lista';
+  }
   $scope.entrar = function(usuario){
     console.log(usuario);
+    webservice.login(usuario, $scope);
   };
 
 })
 
-.controller('CadastroCtrl', function($scope, $ionicListDelegate, $window){
+.controller('CadastroCtrl', function($scope, $window, webservice){
   $scope.cadastro = function(usuario){
     console.log(usuario);
   };
@@ -29,7 +33,10 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('ListaCtrl', function($scope, $ionicListDelegate, $window){
+.controller('ListaCtrl', function($scope, $ionicListDelegate, $window, webservice){
+  if(!webservice.getToken()){
+  	$window.location.href = '#/basico/login';
+  }
   $scope.compras = [
     {id: 1, titulo: 'Super Mais', descricao: 'Compras do mês'}
   ];
