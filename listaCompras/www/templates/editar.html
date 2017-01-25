@@ -1,0 +1,27 @@
+<ion-view view-title="{{titulo}}">
+ <ion-content>
+ 	<div ng-if="pagina == 'principal'">
+ 		<label class="item item-input">
+ 			<input type="text" ng-model="lista.titulo" placeholder="Titulo">
+ 		</label>
+ 		<label class="item item-input">
+ 			<input type="text" ng-model="lista.descricao" placeholder="Descrição">
+ 		</label>
+ 		<button ng-click="editarLista(lista)" class="button button-balanced button-block">Salvar</button>
+
+ 	</div>
+ 	 <div ng-if="pagina == 'detalhe'">
+ 		<label class="item item-input">
+ 			<input type="text" ng-model="compra.titulo" placeholder="Titulo">
+ 		</label>
+ 		<label class="item item-input">
+ 			<input type="text" ng-model="compra.descricao" placeholder="Descrição">
+ 		</label>
+ 		<label class="item item-input">
+ 			<input type="text" ng-model="compra.valor_format" placeholder="Valor">
+ 		</label>
+ 		<button ng-click="editarCompra(compra)" class="button button-balanced button-block">Salvar</button>
+
+ 	</div>
+ </ion-content>
+</ion-view>

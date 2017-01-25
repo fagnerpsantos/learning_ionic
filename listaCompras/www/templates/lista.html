@@ -1,0 +1,17 @@
+<ion-view view-title="ListaCompras">
+ <ion-content>
+ 	<ion-list>
+ 		<ion-item class="item-icon-left" ng-repeat="compra in compras" href="#/app/detalhe/{{compra.id}}">
+ 			<i class="icon ion-ios-cart balanced"></i>
+ 			{{compra.titulo}} - {{compra.descricao}}
+ 			<ion-option-button class="button-calm" ng-click="editarLista(compra.id)">
+ 				Editar
+ 			</ion-option-button>			
+ 			 <ion-option-button class="button-assertive" >
+ 				Deletar
+ 			</ion-option-button>
+ 		</ion-item>
+ 	</ion-list>
+ 	<a href="#/app/adicionar/principal" class="button button-balanced button-block">Adicionar</a>
+ </ion-content>
+</ion-view>
